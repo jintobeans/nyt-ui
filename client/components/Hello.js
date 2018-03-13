@@ -6,7 +6,7 @@ export class Hello extends Component {
     super(props)
   }
   getData = () => {
-    console.log('momunted and getting data')
+    console.log('mounted and getting data')
     axios.get(`/api`)
     .then(res => console.log('data', res.data))
     .catch(err => console.log('error', err))

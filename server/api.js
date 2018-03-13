@@ -3,8 +3,7 @@ const axios = require('axios')
 
 module.exports = router
 
-const url =
-  `https://api.nytimes.com/svc/books/v3/lists/overview.jsonp`;
+const url = `https://api.nytimes.com/svc/books/v3/lists/overview.jsonp`
 
 const apiKey = process.env.API_KEY
 
@@ -16,7 +15,7 @@ router.get('/', (req, res, next) => {
     }
   })
   .then(result => res.json(result.data))
-  .catch(err => console.log('err', err))
+  .catch(err => console.log('Error getting data from NYT API', err))
 })
 
 router.use((req, res, next) => {
