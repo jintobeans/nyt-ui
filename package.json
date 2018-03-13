@@ -7,8 +7,8 @@
     },
     "main": "index.js",
     "scripts": {
-        "build-client": "webpack",
-        "build-client-watch": "webpack -w",
+        "build-client": "webpack & sass public/sass:public",
+        "build-client-watch": "webpack -w & sass --watch public/sass:public",
         "deploy": "script/deploy",
         "lint": "eslint ./ --ignore-path .gitignore",
         "postinstall": "touch secrets.js",
@@ -41,6 +41,7 @@
         "redux": "^3.6.0",
         "redux-logger": "^2.8.1",
         "redux-thunk": "^2.2.0",
+        "request": "^2.85.0",
         "webfontloader": "^1.6.28"
     },
     "devDependencies": {

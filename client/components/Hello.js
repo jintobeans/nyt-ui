@@ -1,11 +1,29 @@
-import React from 'react'
-import {connect} from 'react-redux'
-import {Link} from 'react-router-dom'
+import React, {Component} from 'react'
+import axios from 'axios'
 
-const Hello = () => {
-  <div>
-    <h1>Hi</h1>
-  </div>
+export class Hello extends Component {
+  constructor(props){
+    super(props)
+  }
+  getData = () => {
+    console.log('momunted and getting data')
+    axios.get(`/api`)
+    .then(res => console.log('data', res.data))
+    .catch(err => console.log('error', err))
+  }
+
+  componentDidMount(){
+    this.getData()
+  }
+
+  render() {
+
+    return (
+      <div>
+        <h2>Hello</h2>
+      </div>
+    )
+  }
 }
 
-export default connect(null, null)(Hello)
+export default Hello

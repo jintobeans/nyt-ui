@@ -7,7 +7,6 @@ const PORT = process.env.PORT || 8080
 const app = express()
 module.exports = app
 
-
 if (process.env.NODE_ENV !== 'production') require('../secrets')
 
 const createApp = () => {
@@ -21,6 +20,9 @@ const createApp = () => {
 
   // compression middleware
   app.use(compression())
+
+  //use API
+  app.use('/api', require('./api'))
 
   // static file-serving middleware
   app.use(express.static(path.join(__dirname, '..', 'public')))

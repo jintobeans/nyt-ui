@@ -4,3 +4,4 @@ public/bundle.js.map
 .DS_Store
 npm-debug.log
 package-lock.json
+secrets.js
