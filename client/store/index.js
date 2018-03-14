@@ -2,9 +2,9 @@ import {createStore, combineReducers, applyMiddleware} from 'redux'
 import createLogger from 'redux-logger'
 import thunkMiddleware from 'redux-thunk'
 import {composeWithDevTools} from 'redux-devtools-extension'
-import hello from './hello'
+import overview from './overview'
 
-const reducer = combineReducers({hello})
+const reducer = combineReducers({overview})
 const middleware = composeWithDevTools(applyMiddleware(
   thunkMiddleware,
   createLogger({collapsed: true})
@@ -12,4 +12,4 @@ const middleware = composeWithDevTools(applyMiddleware(
 const store = createStore(reducer, middleware)
 
 export default store
-export * from './hello'
+export * from './overview'

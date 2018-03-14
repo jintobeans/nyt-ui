@@ -1,15 +1,8 @@
-* {
-  box-sizing: border-box;
-}
-
 $font-stack: 'Ubuntu Mono', sans-serif;
 
-h1,
-h2,
-h3,
-h4,
-h5 {
+* {
+  box-sizing: border-box;
   font-family: $font-stack;
-  font-weight: 100
+  font-weight: lighter
 }
 
