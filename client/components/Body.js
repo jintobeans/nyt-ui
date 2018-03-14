@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { overviewResultsThunk } from '../store'
-import { ListItem, Dropdown, FilterButton } from '../components'
+import { ListItem, Dropdown, Button } from '../components'
 
 export class Body extends Component {
   constructor(props) {
@@ -33,7 +33,6 @@ export class Body extends Component {
         <h3>Filters</h3>
         <div id="dropdowns">
           <Dropdown name="fiction" groupItems={dropdownLists.fiction}/>
-          <FilterButton filter="fiction"/>
         </div>
         <div id="lists">
           {this.state.selectedLists && this.state.selectedLists.length > 0 && this.state.selectedLists.map((list) => {

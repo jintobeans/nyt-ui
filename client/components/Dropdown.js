@@ -16,9 +16,14 @@ export class Dropdown extends Component {
     console.log('groupitems', groupItems)
     return (
       <div className="dropdown">
-        <select onChange={this.handleChange} defaultValue={'fiction'}>
-          <option id={this.props.name} name={this.props.name}>
-            {this.props.name}
+        <select
+        onChange={this.handleChange}
+        defaultValue={'fiction'}
+        multiple="hi">
+          <option
+          id={this.props.name}
+          name={this.props.name}>
+          {this.props.name}
           </option>
           <option disabled>--</option>
           {groupItems && groupItems.length > 0 && groupItems.map((selection) => {

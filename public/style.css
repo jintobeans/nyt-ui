@@ -1,14 +1,47 @@
-#main, #lists, #dropdowns {
+#dropdowns, .list-item-content, #main, #lists, .book-item {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column; }
 
+#dropdowns, .list-item-content {
+  flex-direction: row; }
+
 * {
   box-sizing: border-box;
-  font-family: "Ubuntu Mono", sans-serif;
+  font-family: "Helvetica", sans-serif;
   font-weight: lighter; }
 
-#dropdowns {
-  flex-direction: row; }
+body {
+  padding: 1em; }
+
+a {
+  color: black; }
+
+h1,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold; }
+
+.book-item {
+  padding: 0.5em;
+  margin: 2.5em 1em;
+  width: inherit;
+  width: auto;
+  max-width: 20vw; }
+
+.book-item img {
+  height: auto;
+  width: 100%;
+  max-width: 15vh; }
+
+#buy-links {
+  z-index: 2; }
+
+#buy-links div {
+  margin: 0.2em; }
+  #buy-links div a {
+    font-size: 0.8em; }
 
 /*# sourceMappingURL=style.css.map */
