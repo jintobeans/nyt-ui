@@ -7,6 +7,7 @@ export class Main extends Component {
     return (
       <div id="main">
         <h1>New York Times Bestsellers</h1>
+        <h2>The latest books to make the New York Times bestsellers lists</h2>
         {children}
       </div>
     )

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { overviewResultsThunk } from '../store'
-import { ListItem, Dropdown, Button } from '../components'
+import { ListItem, Button } from '../components'
 
 export class Body extends Component {
   constructor(props) {
@@ -18,21 +18,113 @@ export class Body extends Component {
     }
   }
   handleSelect = (e) => {
-    console.log('e', e)
+    console.log('e', e.target.value)
+    let filterChosen = document.getElementById('fiction-dropdown')
+    var getSelectedValues =  function(filterChosen) {
+      return [].reduce.call(filterChosen.options, function(result, option) {
+        if (option.selected) result.push(option.value);
+        return result
+      }, [])
+    }
+    console.log('getselect', getSelectedValues)
   }
   render() {
+    let {allLists} = this.props
+    //categorize lists into groups
     let dropdownLists = {
-      fiction: ['hi'],
-      nonfiction: [],
-      youth: [],
-      monthly: []
+      fiction: allLists && allLists.length > 0 && allLists.filter((list) => {
+        return list.list_name.includes('Fiction')
+      }),
+      nonfiction: allLists && allLists.length > 0 && allLists.filter((list) => {
+        return list.list_name.includes('Nonfiction') || list.list_name.includes('Advice')
+      }),
+      youth: allLists && allLists.length > 0 && allLists.filter((list) => {
+        return list.list_name.includes('Children') || list.list_name.includes('Young') || list.list_name.includes('Picture') || list.list_name.includes('Series')
+      }),
+      monthly: allLists && allLists.length > 0 && allLists.filter((list) => {
+        return list.list_name.includes('Business') || list.list_name.includes('Science') || list.list_name.includes('Sports') || list.list_name.includes('Audio')
+      }),
     }
     return (
       <div id="content">
-        <h2>The latest books to make the New York Times bestsellers lists</h2>
-        <h3>Filters</h3>
+        <h3>Filter by group</h3>
         <div id="dropdowns">
-          <Dropdown name="fiction" groupItems={dropdownLists.fiction}/>
+          <div className="dropdown" id="fiction-dropdown">
+            <select
+              onChange={this.handleSelect}
+              multiple
+            >
+              <option
+                selected
+                id='fiction'
+                value='fiction'>
+                All Fiction
+              </option>
+              <option disabled>--</option>
+              {dropdownLists.fiction && dropdownLists.fiction.length > 0 && dropdownLists.fiction.map((selection) => {
+                return (
+                  <option key={selection.list_id} value={selection.list_id}>{selection.list_name}</option>
+                )
+              })}
+            </select>
+          </div>
+          <div className="dropdown" id="nonfiction-dropdown">
+            <select
+              onChange={this.handleSelect}
+              multiple
+            >
+              <option
+                selected
+                id='nonfiction'
+                value='nonfiction'>
+                All Nonfiction
+              </option>
+              <option disabled>--</option>
+              {dropdownLists.nonfiction && dropdownLists.nonfiction.length > 0 && dropdownLists.nonfiction.map((selection) => {
+                return (
+                  <option key={selection.list_id} value={selection.list_id}>{selection.list_name}</option>
+                )
+              })}
+            </select>
+          </div>
+          <div className="dropdown" id="youth-dropdown">
+            <select
+              onChange={this.handleSelect}
+              multiple
+            >
+              <option
+                selected
+                id='youth'
+                value='youth'>
+                All Children's
+              </option>
+              <option disabled>--</option>
+              {dropdownLists.youth && dropdownLists.youth.length > 0 && dropdownLists.youth.map((selection) => {
+                return (
+                  <option key={selection.list_id} value={selection.list_id}>{selection.list_name}</option>
+                )
+              })}
+            </select>
+          </div>
+          <div className="dropdown" id="monthly-dropdown">
+            <select
+              onChange={this.handleSelect}
+              multiple
+            >
+              <option
+                selected
+                id='monthly'
+                value='monthly'>
+                All Monthly
+              </option>
+              <option disabled>--</option>
+              {dropdownLists.monthly && dropdownLists.monthly.length > 0 && dropdownLists.monthly.map((selection) => {
+                return (
+                  <option key={selection.list_id} value={selection.list_id}>{selection.list_name}</option>
+                )
+              })}
+            </select>
+          </div>
         </div>
         <div id="lists">
           {this.state.selectedLists && this.state.selectedLists.length > 0 && this.state.selectedLists.map((list) => {

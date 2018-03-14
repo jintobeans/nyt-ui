@@ -18,17 +18,18 @@ export class Dropdown extends Component {
       <div className="dropdown">
         <select
         onChange={this.handleChange}
-        defaultValue={'fiction'}
-        multiple="hi">
+        multiple
+        >
           <option
+          selected
           id={this.props.name}
-          name={this.props.name}>
-          {this.props.name}
+          value={this.props.name}>
+          all {this.props.name}
           </option>
           <option disabled>--</option>
           {groupItems && groupItems.length > 0 && groupItems.map((selection) => {
             return(
-              <option key={selection} name={selection}>{selection}</option>
+              <option key={selection} value={selection}>{selection}</option>
             )
           })}
         </select>

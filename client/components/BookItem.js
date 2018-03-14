@@ -9,7 +9,6 @@ export class BookItem extends Component {
   }
   render() {
     let { book } = this.props
-    console.log('book', book)
     return (
       <article className="book-item">
         <header>
