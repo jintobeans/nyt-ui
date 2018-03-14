@@ -11,7 +11,7 @@ export class ListItem extends Component {
     let {list} = this.props
     return (
       <div className='list-item'>
-        <h4>{this.props.list.display_name}</h4>
+        <h3>{this.props.list.display_name}</h3>
         <div className="list-item-content">
           {list.books.map((book) => {
             return (

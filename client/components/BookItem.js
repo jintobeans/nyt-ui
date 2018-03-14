@@ -13,15 +13,17 @@ export class BookItem extends Component {
     return (
       <article className="book-item">
         <header>
-          <h6>{book.rank}</h6>
+          <h5>{book.rank}</h5>
           <img src={book.book_image} />
         </header>
         <div>
-          <h5>{book.title}</h5>
-          {book.weeks_on_list > 1 ?
-          <i>{book.weeks_on_list} weeks on the list</i> :
-          <p>New this week!</p>}
-          <p>{book.contributor}</p>
+          <h4>{book.title}</h4>
+          <p>{book.contributor}
+            <br /><br />
+            {book.weeks_on_list > 1 ?
+            <i>{book.weeks_on_list} weeks on the list</i> :
+            <i>New this week!</i>}
+          </p>
           <Button
           label='Buy Now'
           type='dropdown'
