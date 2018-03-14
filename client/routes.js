@@ -9,8 +9,8 @@ import {overviewResultsThunk} from './store'
  * COMPONENT
  */
 class Routes extends Component {
-  componentDidMount(){
-    this.props.getData()
+  componentWillMount(){
+    this.props.getOverview()
   }
 
   render () {
@@ -38,7 +38,7 @@ const mapState = (state) => {
 
 const mapDispatch = (dispatch) => {
   return {
-    getData: () => {
+    getOverview: () => {
       return dispatch(overviewResultsThunk())
     }
   }

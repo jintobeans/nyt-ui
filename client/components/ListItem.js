@@ -6,7 +6,7 @@ export class ListItem extends Component {
     super(props)
   }
   render() {
-    console.log('list', this.props.list)
+    // console.log('list', this.props.list)
     return (
       <div className='list-item-content'>
         <h5>{this.props.list.display_name}</h5>

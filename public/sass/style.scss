@@ -20,3 +20,7 @@ $font-stack: 'Ubuntu Mono', sans-serif;
   @extend %flexbox-column
 }
 
+#dropdowns{
+  @extend %flexbox-column;
+  flex-direction: row
+}
