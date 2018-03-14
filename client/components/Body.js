@@ -1,19 +1,35 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import axios from 'axios'
 import {overviewResultsThunk} from '../store'
+import {ListItem} from '../components'
 
 export class Body extends Component {
   constructor(props){
     super(props)
+    this.state = {
+      selectedLists: []
+    }
   }
-  componentDidMount(){
-    this.props.getData()
+  componentWillReceiveProps(nextProps) {
+    if (this.props.allLists !== nextProps.allLists){
+      this.setState({
+        selectedLists: nextProps.allLists
+      })
+    }
   }
   render() {
     return (
       <div id="content">
-        <h2>The latest books to make the New York Times bestsellers list</h2>
+        <h2>The latest books to make the New York Times bestsellers lists</h2>
+        <div id="lists">
+          {this.state.selectedLists && this.state.selectedLists.length > 0 && this.state.selectedLists.map((list) => {
+            return (
+              <div className="list-item" key={list.list_id}>
+                <ListItem list={list}/>
+              </div>
+            )
+          })}
+        </div>
       </div>
     )
   }
@@ -21,7 +37,7 @@ export class Body extends Component {
 
 const mapState = (state) => {
   return {
-    overview: state.overview
+    allLists: state.overview.lists
   }
 }
 

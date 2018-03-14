@@ -1,8 +1,22 @@
 $font-stack: 'Ubuntu Mono', sans-serif;
 
+%flexbox-column {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column
+}
+
 * {
   box-sizing: border-box;
   font-family: $font-stack;
   font-weight: lighter
+}
+
+#main{
+  @extend %flexbox-column
+}
+
+#lists{
+  @extend %flexbox-column
 }
 
