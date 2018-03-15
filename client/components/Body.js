@@ -23,16 +23,30 @@ export class Body extends Component {
     }
   }
   handleSelect = (e) => {
-    console.log('e', e.target.value)
-    // let filterChosen = document.getElementById('fiction-dropdown')
-    // var getSelectedValues =  function(element) {
-    //   console.log('elem', element)
-    //   return [].reduce.call(element.options, function(result, option) {
-    //     if (option.selected) result.push(option.value);
-    //     return result
-    //   }, [])
-    // }
-    // console.log('getselect', getSelectedValues(filterChosen))
+    let fictionFilter = document.getElementById('fiction-dropdown')
+    let nonfictionFilter = document.getElementById('nonfiction-dropdown')
+    let youthFilter = document.getElementById('youth-dropdown')
+    let monthlyFilter = document.getElementById('monthly-dropdown')
+    var getSelectedValues =  function(element) {
+      return [].reduce.call(element.options, function(result, option) {
+        if (option.selected) result.push(option.value);
+        return result
+      }, [])
+    }
+    let selectedFictionValues = getSelectedValues(fictionFilter)
+    let selectedNonfictionValues = getSelectedValues(nonfictionFilter)
+    let selectedYouthValues = getSelectedValues(youthFilter)
+    let selectedMonthlyValues = getSelectedValues(monthlyFilter)
+    let allSelectedValues = selectedFictionValues.concat(selectedNonfictionValues, selectedYouthValues, selectedMonthlyValues)
+    console.log('allselected', allSelectedValues)
+    let allSelectedLists = []
+    this.props.allLists.filter((list) => {
+      allSelectedValues.map((value) => {
+        console.log('value', value, 'listid', list.list_id)
+        return list.list_id === value
+      })
+    })
+    // console.log('all lists', allSelectedLists)
   }
   render() {
     let {allLists} = this.props
@@ -55,10 +69,12 @@ export class Body extends Component {
       <div id="content">
         <h3>Filter by group</h3>
         <div id="dropdowns">
-          <div className="dropdown" id="fiction-dropdown">
+          <div className="dropdown">
             <select
+              id="fiction-dropdown"
               onChange={this.handleSelect}
               multiple
+              name="fiction[]"
             >
               <option
                 selected
@@ -66,7 +82,7 @@ export class Body extends Component {
                 value='fiction'>
                 All Fiction
               </option>
-              <option>--</option>
+              <option disabled>--</option>
               {dropdownLists.fiction && dropdownLists.fiction.length > 0 && dropdownLists.fiction.map((selection) => {
                 return (
                   <option key={selection.list_id} value={selection.list_id}>{selection.list_name}</option>
@@ -74,8 +90,9 @@ export class Body extends Component {
               })}
             </select>
           </div>
-          <div className="dropdown" id="nonfiction-dropdown">
+          <div className="dropdown">
             <select
+              id="nonfiction-dropdown"
               onChange={this.handleSelect}
               multiple
             >
@@ -85,7 +102,7 @@ export class Body extends Component {
                 value='nonfiction'>
                 All Nonfiction
               </option>
-              <option>--</option>
+              <option disabled>--</option>
               {dropdownLists.nonfiction && dropdownLists.nonfiction.length > 0 && dropdownLists.nonfiction.map((selection) => {
                 return (
                   <option key={selection.list_id} value={selection.list_id}>{selection.list_name}</option>
@@ -93,8 +110,9 @@ export class Body extends Component {
               })}
             </select>
           </div>
-          <div className="dropdown" id="youth-dropdown">
+          <div className="dropdown">
             <select
+              id="youth-dropdown"
               onChange={this.handleSelect}
               multiple
             >
@@ -104,7 +122,7 @@ export class Body extends Component {
                 value='youth'>
                 All Children's
               </option>
-              <option>--</option>
+              <option disabled>--</option>
               {dropdownLists.youth && dropdownLists.youth.length > 0 && dropdownLists.youth.map((selection) => {
                 return (
                   <option key={selection.list_id} value={selection.list_id}>{selection.list_name}</option>
@@ -112,8 +130,9 @@ export class Body extends Component {
               })}
             </select>
           </div>
-          <div className="dropdown" id="monthly-dropdown">
+          <div className="dropdown">
             <select
+              id="monthly-dropdown"
               onChange={this.handleSelect}
               multiple
             >
@@ -123,7 +142,7 @@ export class Body extends Component {
                 value='monthly'>
                 All Monthly
               </option>
-              <option>--</option>
+              <option disabled>--</option>
               {dropdownLists.monthly && dropdownLists.monthly.length > 0 && dropdownLists.monthly.map((selection) => {
                 return (
                   <option key={selection.list_id} value={selection.list_id}>{selection.list_name}</option>
