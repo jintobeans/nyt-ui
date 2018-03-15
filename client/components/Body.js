@@ -10,6 +10,11 @@ export class Body extends Component {
       selectedLists: []
     }
   }
+  componentDidMount(){
+    this.setState({
+      selectedLists: this.props.allLists
+    })
+  }
   componentWillReceiveProps(nextProps) {
     if (this.props.allLists !== nextProps.allLists) {
       this.setState({

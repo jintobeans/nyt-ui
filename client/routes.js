@@ -20,6 +20,8 @@ class Routes extends Component {
           <Switch>
             <Route path="/overviewList/:listNameEncoded"
             component={SingleList} />
+            <Route path="/overviewList"
+            component={Body} />
             <Route path="/" component={Body} />
           </Switch>
         </Main>
