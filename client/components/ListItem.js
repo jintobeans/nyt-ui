@@ -18,7 +18,10 @@ export class ListItem extends Component {
         <div className="list-item-content">
           {list.books.map((book) => {
             return (
-              <BookItem key={book.rank} book={book} />
+              <BookItem
+                key={`${book.primary_isbn13}`}
+                book={book}
+                listName={list.list_name_encoded}/>
             )
           })}
         </div>

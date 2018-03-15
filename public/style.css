@@ -1,15 +1,52 @@
-#dropdowns, .list-item-content, #main, #lists, .book-item {
+.list-item-content,
+#filter-buttons,
+#dropdowns, #main,
+#lists, .book-item {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column; }
 
-#dropdowns, .list-item-content {
-  flex-direction: row; }
+.list-item-content,
+#filter-buttons,
+#dropdowns {
+  flex-direction: row;
+  flex-wrap: wrap; }
 
 * {
   box-sizing: border-box;
-  font-family: "Helvetica", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: lighter; }
+
+/* reset styles*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li,
+p,
+blockquote {
+  margin: 0;
+  padding: 0;
+  margin: 0 auto; }
+
+input,
+textarea,
+button {
+  border: 0;
+  border-radius: 0;
+  outline: none;
+  appearance: none; }
+  input:hover, input:active, input:focus,
+  textarea:hover,
+  textarea:active,
+  textarea:focus,
+  button:hover,
+  button:active,
+  button:focus {
+    outline: none; }
 
 body {
   padding: 1em; }
@@ -22,26 +59,82 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: bold; }
+  font-weight: bold;
+  font-family: "Coustard", serif;
+  margin: 0 auto; }
 
+.list-item-content {
+  justify-content: space-around; }
+
+/* The container to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block; }
+
+/*dropdown buttons and hover styles*/
+#filter-buttons {
+  justify-content: space-around;
+  margin: 2em 0; }
+  #filter-buttons button {
+    background-color: none;
+    color: black;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 30rem;
+    font-size: 0.8rem; }
+    #filter-buttons button:active:after, #filter-buttons button:focus:after, #filter-buttons button:hover:after {
+      content: '';
+      border-bottom: 2px solid blue;
+      position: absolute;
+      left: 0;
+      top: 90%;
+      width: 100%; }
+
+/* styles for individual book item */
 .book-item {
   padding: 0.5em;
   margin: 1em 1em;
   width: inherit;
   width: auto;
   max-width: 20vw; }
+  .book-item img {
+    height: auto;
+    width: 100%;
+    max-width: 20vh; }
 
-.book-item img {
-  height: auto;
-  width: 100%;
-  max-width: 20vh; }
-
-#buy-links {
-  z-index: 2; }
-
+/* Style buy links */
 #buy-links div {
   margin: 0.2em; }
   #buy-links div a {
     font-size: 0.8em; }
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: lightblue;
+  min-width: 160px;
+  z-index: 1;
+  border-radius: 30px; }
+
+/* Links inside dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 0.8rem; }
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: lightcoral;
+  opacity: 20%;
+  border-radius: 30px; }
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+  border-radius: 30px; }
 
 /*# sourceMappingURL=style.css.map */

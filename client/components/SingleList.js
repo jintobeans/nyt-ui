@@ -11,7 +11,7 @@ export class SingleList extends Component {
     }
   }
   componentDidMount(){
-    let singleList = this.props.lists.find((list) => {
+    let singleList = this.props.lists && this.props.lists.find((list) => {
       return list.list_name_encoded === this.props.match.params.listNameEncoded
     })
     this.setState({
@@ -34,12 +34,15 @@ export class SingleList extends Component {
     return (
       <div className='single-list'>
         <h3>
-         {list.display_name}
+         {list && list.display_name}
         </h3>
+        <h4>
+          <Link to="/">Go back to homepage</Link>
+        </h4>
         <div className="list-item-content">
-          {list.books && list.books.length > 0 && list.books.map((book) => {
+          {list && list.books && list.books.length > 0 && list.books.map((book) => {
             return (
-              <BookItem key={book.rank} book={book} />
+              <BookItem key={book.rank} book={book} routedList={listName}/>
             )
           })}
         </div>
