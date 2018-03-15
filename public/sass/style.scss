@@ -59,16 +59,16 @@ a{
 }
 //end reset styles
 
-hr {
-  width: -webkit-fill-available;
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 0.5rem solid orange;
-  margin: 1em 0;
-  padding: 0;
-  border-radius: 2rem;
-}
+// hr {
+//   width: -webkit-fill-available;
+//   display: block;
+//   height: 1px;
+//   border: 0;
+//   border-top: 0.5rem solid orange;
+//   margin: 1em 0;
+//   padding: 0;
+//   border-radius: 2rem;
+// }
 
 body{
   padding: 1em
@@ -87,7 +87,6 @@ h6{
 h3 a{
   font-weight: bold;
   font-family: $font-header;
-  margin: 0 auto;
 }
 
 #main,
@@ -97,7 +96,8 @@ h3 a{
 
 .list-item-content,
 #filter-buttons,
-#dropdowns{
+#dropdowns,
+article{
   @extend %flexbox-row;
 }
 
@@ -178,6 +178,18 @@ h3 a{
     max-width: 20vh;
   }
 }
+/*Book Item Buttons*/
+.button button{
+  font-size: 0.8rem;
+  margin: .4rem 0;
+  padding: 0.8em 1em;
+  background-color: orange;
+  border-radius: 20rem;
+  border: 2px solid orange;
+  &:hover{
+    background-color: white;
+  }
+}
 
 /* Buy Links */
 #buy-links div{
@@ -187,3 +199,7 @@ h3 a{
   }
 }
 
+/*Single List*/
+.single-list{
+  margin: 1rem 0
+}

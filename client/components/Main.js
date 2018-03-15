@@ -9,7 +9,6 @@ export class Main extends Component {
         <h1>New York Times Bestsellers</h1>
         <p>Authoritatively ranked lists of books sold in the United States, sorted by format and genre.
         </p>
-        <hr noshade />
         {children}
       </div>
     )

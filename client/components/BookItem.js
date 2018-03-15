@@ -15,14 +15,16 @@ export class BookItem extends Component {
           <h5>{book.rank}</h5>
           <img src={book.book_image} />
         </header>
-        <div>
+        <div className="book-item-content">
           <h4>{book.title}</h4>
           <p>
             {book.contributor}
 
             {routedList &&
               <span>
-              <br /><i>{book.description}</i>
+                <br />
+                <br />
+                <i>{book.description}</i>
               </span>
             }
             <br /><br />
@@ -31,10 +33,11 @@ export class BookItem extends Component {
             <i>New this week!</i>}
           </p>
           <Button
-          label='Buy Now'
-          type='dropdown'
-          id={`${book.primary_isbn13}+${listName}`}
-          links={book.buy_links} />
+            label='Buy Now'
+            type='dropdown'
+            id={`${book.primary_isbn13}+${listName}`}
+            links={book.buy_links}
+          />
           {book.book_review_link &&
             <a href={book.book_review_link}>
               <Button

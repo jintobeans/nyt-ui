@@ -1,6 +1,7 @@
 .list-item-content,
 #filter-buttons,
-#dropdowns, #main,
+#dropdowns,
+article, #main,
 #lists, .book-item {
   display: flex;
   flex-wrap: wrap;
@@ -8,7 +9,8 @@
 
 .list-item-content,
 #filter-buttons,
-#dropdowns {
+#dropdowns,
+article {
   flex-direction: row;
   flex-wrap: wrap; }
 
@@ -54,16 +56,6 @@ a {
     text-decoration: underline;
     text-decoration-color: orange; }
 
-hr {
-  width: -webkit-fill-available;
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 0.5rem solid orange;
-  margin: 1em 0;
-  padding: 0;
-  border-radius: 2rem; }
-
 body {
   padding: 1em; }
 
@@ -78,8 +70,7 @@ h6 {
 
 h3 a {
   font-weight: bold;
-  font-family: "Coustard", serif;
-  margin: 0 auto; }
+  font-family: "Coustard", serif; }
 
 .list-item-content {
   justify-content: space-around; }
@@ -140,10 +131,25 @@ h3 a {
     width: 100%;
     max-width: 20vh; }
 
+/*Book Item Buttons*/
+.button button {
+  font-size: 0.8rem;
+  margin: .4rem 0;
+  padding: 0.8em 1em;
+  background-color: orange;
+  border-radius: 20rem;
+  border: 2px solid orange; }
+  .button button:hover {
+    background-color: white; }
+
 /* Buy Links */
 #buy-links div {
   margin: 0.2em; }
   #buy-links div a {
     font-size: 0.8em; }
+
+/*Single List*/
+.single-list {
+  margin: 1rem 0; }
 
 /*# sourceMappingURL=style.css.map */
