@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {Router, Route, Switch} from 'react-router-dom'
 import history from './history'
-import {Main, Body} from './components'
+import {Main, Body, SingleList} from './components'
 import {overviewResultsThunk} from './store'
 
 /**
@@ -18,7 +18,8 @@ class Routes extends Component {
       <Router history={history}>
         <Main>
           <Switch>
-            <Route path="/combined-print-and-e-book-fiction" component={Body} />
+            <Route path="/overviewList/:listNameEncoded"
+            component={SingleList} />
             <Route path="/" component={Body} />
           </Switch>
         </Main>

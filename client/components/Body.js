@@ -19,14 +19,15 @@ export class Body extends Component {
   }
   handleSelect = (e) => {
     console.log('e', e.target.value)
-    let filterChosen = document.getElementById('fiction-dropdown')
-    var getSelectedValues =  function(filterChosen) {
-      return [].reduce.call(filterChosen.options, function(result, option) {
-        if (option.selected) result.push(option.value);
-        return result
-      }, [])
-    }
-    console.log('getselect', getSelectedValues)
+    // let filterChosen = document.getElementById('fiction-dropdown')
+    // var getSelectedValues =  function(element) {
+    //   console.log('elem', element)
+    //   return [].reduce.call(element.options, function(result, option) {
+    //     if (option.selected) result.push(option.value);
+    //     return result
+    //   }, [])
+    // }
+    // console.log('getselect', getSelectedValues(filterChosen))
   }
   render() {
     let {allLists} = this.props
@@ -60,7 +61,7 @@ export class Body extends Component {
                 value='fiction'>
                 All Fiction
               </option>
-              <option disabled>--</option>
+              <option>--</option>
               {dropdownLists.fiction && dropdownLists.fiction.length > 0 && dropdownLists.fiction.map((selection) => {
                 return (
                   <option key={selection.list_id} value={selection.list_id}>{selection.list_name}</option>
@@ -79,7 +80,7 @@ export class Body extends Component {
                 value='nonfiction'>
                 All Nonfiction
               </option>
-              <option disabled>--</option>
+              <option>--</option>
               {dropdownLists.nonfiction && dropdownLists.nonfiction.length > 0 && dropdownLists.nonfiction.map((selection) => {
                 return (
                   <option key={selection.list_id} value={selection.list_id}>{selection.list_name}</option>
@@ -98,7 +99,7 @@ export class Body extends Component {
                 value='youth'>
                 All Children's
               </option>
-              <option disabled>--</option>
+              <option>--</option>
               {dropdownLists.youth && dropdownLists.youth.length > 0 && dropdownLists.youth.map((selection) => {
                 return (
                   <option key={selection.list_id} value={selection.list_id}>{selection.list_name}</option>
@@ -117,7 +118,7 @@ export class Body extends Component {
                 value='monthly'>
                 All Monthly
               </option>
-              <option disabled>--</option>
+              <option>--</option>
               {dropdownLists.monthly && dropdownLists.monthly.length > 0 && dropdownLists.monthly.map((selection) => {
                 return (
                   <option key={selection.list_id} value={selection.list_id}>{selection.list_name}</option>

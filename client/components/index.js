@@ -4,5 +4,7 @@ export {default as ListItem} from './ListItem'
 export {default as Dropdown} from './Dropdown'
 export {default as Button} from './Button'
 export {default as BookItem} from './BookItem'
+export {default as SingleList} from './SingleList'
+
 
 
