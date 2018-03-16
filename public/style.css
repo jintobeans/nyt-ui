@@ -30,8 +30,11 @@ h6 {
   .buttonbuy button:visited, .buttonbasic button:visited, .buttonbuy button:focus, .buttonbasic button:focus {
     outline: none; }
 
-* {
-  box-sizing: border-box;
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit;
   font-family: "Open Sans", sans-serif;
   font-weight: lighter; }
 

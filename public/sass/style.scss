@@ -34,8 +34,12 @@ $accent-color-light: #CAEBF2;
   }
 }
 
-* {
+
+html {
   box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
   font-family: $font-sub;
   font-weight: lighter;
 }
