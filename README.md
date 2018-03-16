@@ -4,7 +4,7 @@
 
 For this project, I used React to render components, React-Redux for overall state management, Express for serving the app, and jsonp for accessing data from the NYT Books Overview API that was given.
 
-## Project Objectives:
+## Objectives of the challenge:
 
 * Build an intuitive user interface
 
