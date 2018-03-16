@@ -110,6 +110,7 @@ a {
   #filter-buttons button {
     background-color: inherit;
     color: black;
+    font-weight: bold;
     padding: 16px;
     font-size: 1rem;
     border: none; }
