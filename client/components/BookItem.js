@@ -19,13 +19,13 @@ export class BookItem extends Component {
           <h4>{book.title}</h4>
           <p>
             {book.contributor}
-            {routedList &&
-              <span>
-                <br />
-                <br />
-                <i>{book.description}</i>
-              </span>
-            }
+            {routedList
+              &&
+                <span>
+                  <br />
+                  <br />
+                  <i>{book.description}</i>
+                </span>}
             <br /><br />
             {book.weeks_on_list > 1
               ? <i>
@@ -44,8 +44,8 @@ export class BookItem extends Component {
               &&
                 <a href={book.book_review_link}>
                   <BookItemButton
-                  label='Read Review'
-                  type='basic' />
+                    label='Read Review'
+                    type='basic' />
                 </a>}
           </div>
         </div>

@@ -39,7 +39,6 @@ export class Home extends Component {
     event.preventDefault()
     console.log('event', event.target)
     let { allLists } = this.props
-    //set state based on group selected
     this.setState({
       selectedLists: this.props[event.target.value] || allLists
     })
