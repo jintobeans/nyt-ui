@@ -5,3 +5,6 @@ public/bundle.js.map
 npm-debug.log
 package-lock.json
 secrets.js
+.sass-cache
+public/normalize.css.map
+public/style.css.map

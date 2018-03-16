@@ -31,7 +31,7 @@ A 3-4 day challenge to build a simple user interface for browsing overviews of t
 
 ## Bugs:
 
-* Moving API call to the backend does not currently work with jsonp
+* Moving API call to the backend does not currently work with jsonp - ideal for protecting API key
 
 ## Stretch Goals:
 
