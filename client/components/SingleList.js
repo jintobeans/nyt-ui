@@ -10,6 +10,7 @@ export class SingleList extends Component {
       list: {}
     }
   }
+
   componentDidMount(){
     let singleList = this.props.lists && this.props.lists.find((list) => {
       return list.list_name_encoded === this.props.match.params.listNameEncoded
@@ -18,6 +19,7 @@ export class SingleList extends Component {
       list: singleList
     })
   }
+
   componentWillReceiveProps(nextProps){
     if(this.props.lists !== nextProps.lists){
       let singleList = nextProps.lists.find((list) => {
@@ -28,9 +30,11 @@ export class SingleList extends Component {
       })
     }
   }
+
   render() {
     let listName = this.props.match.params.listNameEncoded
     let list = this.state.list
+
     return (
       <div className='single-list'>
         <h3>

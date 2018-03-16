@@ -9,6 +9,7 @@ export class ListItem extends Component {
 
   render() {
     let {list} = this.props
+
     return (
       <div className='list-item'>
         <h3>

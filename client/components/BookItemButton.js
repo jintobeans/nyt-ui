@@ -9,6 +9,7 @@ export class BookItemButton extends Component {
 
   render() {
     let {filter, label, type, id, links} = this.props
+
     return (
       <div className={`button${type}`} id={id}>
         <button

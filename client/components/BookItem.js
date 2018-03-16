@@ -9,6 +9,7 @@ export class BookItem extends Component {
 
   render() {
     let { book , listName, routedList} = this.props
+
     return (
       <article className="book-item">
         <div className="book-item-header">
@@ -22,8 +23,7 @@ export class BookItem extends Component {
             {routedList
               &&
                 <span>
-                  <br />
-                  <br />
+                  <br /><br />
                   <i>{book.description}</i>
                 </span>}
             <br /><br />
