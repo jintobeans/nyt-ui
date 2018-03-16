@@ -19,11 +19,11 @@ describe('<BookItemButton /> Component', () => {
     )
   })
 
-  it('should render a button', () => {
+  xit('should render a button', () => {
     expect(bookItemButton.find('button')).to.have.length(1)
   })
 
-  it('should render a <div> with class `.buttonbuy`', () => {
+  xit('should render a <div> with class `.buttonbuy`', () => {
     expect(bookItemButton.find('.buttonbuy')).to.have.length(1);
   });
 

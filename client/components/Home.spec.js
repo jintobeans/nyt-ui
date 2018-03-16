@@ -26,9 +26,20 @@ describe('<Home /> Component', () => {
     }
   ]
 
+  let nonfictionLists = [
+    {
+      'list_name': 'Business Books',
+      'list_name_encoded': 'business_books'
+    },
+    {
+      'list_name': 'Self Help',
+      'list_name_encoded': 'self_help'
+    }
+  ]
+
   beforeEach(() => {
     home = render(
-        <Home fictionLists={fictionLists}/>
+        <Home fictionLists={fictionLists} nonfictionLists={nonfictionLists}/>
     )
   });
 
@@ -36,8 +47,12 @@ describe('<Home /> Component', () => {
     expect(home.find('#filter-buttons')).to.have.length(1)
   });
 
-  it('should render five buttons', () => {
-    expect(home.find('button')).to.have.length(5)
+  it('should render two items with `.dropdown` classname for each list of lists', () => {
+    expect(home.find('.dropdown')).to.have.length(2)
+  });
+
+  it('should render two buttons - one for each list of lists', () => {
+    expect(home.find('button')).to.have.length(2)
   });
 
   it('should render <div> called `#lists`', () => {
@@ -45,7 +60,7 @@ describe('<Home /> Component', () => {
   });
 
   it('should map over each list with an <a> tag', () => {
-    expect(home.find('a')).to.have.length(3);
+    expect(home.find('a')).to.have.length(5);
   });
 
   it('should map correct value onto <a> tag attribute', () => {
