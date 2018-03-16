@@ -33,8 +33,7 @@ $accent-color-light: #CAEBF2;
     outline:none
   }
 }
-
-
+// ---RESPONSIVE BOX SIZING --- //
 html {
   box-sizing: border-box;
 }
@@ -44,6 +43,7 @@ html {
   font-weight: lighter;
 }
 
+// --- GENERAL STYLING --- //
 p{
   @extend %center-element
 }
@@ -67,6 +67,12 @@ h6{
   @extend %center-element;
 }
 
+#main,
+#lists,{
+  @extend %flexbox-column
+};
+
+// -- LINK STYLES -- //
 h3 a{
   font-weight: bold;
   font-family: $font-header;
@@ -86,10 +92,18 @@ a{
   }
 }
 
-#main,
-#lists,{
-  @extend %flexbox-column
-};
+/* Responsive Link Styles */
+@media screen and (max-width: 1024px){
+  a,
+  h3 a,
+  h3 a:visited{
+    color: $accent-color-bright;
+    text-decoration: underline;
+    &:hover{
+      color: $accent-color-bright
+    }
+  }
+}
 
 //----- LIST ITEM STYLING -----//
 .list-item{
@@ -287,5 +301,8 @@ a{
 
 //----- SINGLE LIST PAGE STYLING -----//
 .single-list{
-  margin: 1rem 0
+  margin: 1rem 0;
+  width: 100%;
+  height: auto;
+  max-width: 100vw;
 };
