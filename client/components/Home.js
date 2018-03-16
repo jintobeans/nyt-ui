@@ -37,6 +37,7 @@ export class Home extends Component {
 
   handleFilterButtonClick = (event) => {
     event.preventDefault()
+    console.log('event', event.target)
     let { allLists } = this.props
     //set state based on group selected
     this.setState({
@@ -55,7 +56,7 @@ export class Home extends Component {
               className="dropbtn"
               onClick={this.handleFilterButtonClick}
               value='all'>
-              <b>ALL LISTS</b>
+              ALL LISTS
             </button>
             <div className="dropdown-content">
               {allLists && allLists.map((list) => {
@@ -76,7 +77,7 @@ export class Home extends Component {
               className="dropbtn"
               onClick={this.handleFilterButtonClick}
               value='fictionLists'>
-              <b>FICTION LISTS</b>
+              FICTION LISTS
             </button>
             <div className="dropdown-content">
               {fictionLists && fictionLists.map((fictionList) => {
@@ -97,7 +98,7 @@ export class Home extends Component {
               className="dropbtn"
               onClick={this.handleFilterButtonClick}
               value='nonfictionLists'>
-              <b>NONFICTION LISTS</b>
+              NONFICTION LISTS
             </button>
             <div className="dropdown-content">
               {nonfictionLists && nonfictionLists.map((nonfictionList) => {
@@ -118,7 +119,7 @@ export class Home extends Component {
               className="dropbtn"
               onClick={this.handleFilterButtonClick}
               value='youthLists'>
-              <b>CHILDREN'S LISTS</b>
+              CHILDREN'S LISTS
             </button>
             <div className="dropdown-content">
               {youthLists && youthLists.map((youthList) => {
@@ -139,7 +140,7 @@ export class Home extends Component {
               className="dropbtn"
               onClick={this.handleFilterButtonClick}
               value='monthlyLists'>
-              <b>MONTHLY LISTS</b>
+              MONTHLY LISTS
             </button>
             <div className="dropdown-content">
               {monthlyLists && monthlyLists.map((monthlyList) => {
