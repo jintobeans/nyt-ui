@@ -29,6 +29,17 @@ A 3-4 day challenge to build a simple user interface for browsing overviews of t
 
 * Write code that is as readable as possible
 
+## Installation:
+
+Install dependencies:
+```
+npm install
+```
+Run on local server:
+```
+npm run start-dev
+```
+
 ## Bugs:
 
 * Moving API call to the backend does not currently work with jsonp - ideal for protecting API key
