@@ -8,7 +8,7 @@ For this project, I used React to render components, React-Redux for overall sta
 
 * Build an intuitive user interface
 
-* Make the UI responsive for all kinds of devices
+* Make the UI responsive
 
 * Avoid using any CSS frameworks
 
@@ -18,7 +18,7 @@ For this project, I used React to render components, React-Redux for overall sta
 
 * Include tests for each component
 
-* Write code that is as modular and readable as possible
+* Write code that is as readable as possible
 
 ## Bugs:
 
