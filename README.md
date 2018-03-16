@@ -1,6 +1,6 @@
-# New York Times Bestsellers
+# New York Times Bestsellers Challenge
 
-A simple user interface for browsing overviews of the New York Times Bestsellers
+A 3-4 day challenge to build a simple user interface for browsing overviews of the New York Times Bestsellers
 
 ## Technologies Used:
 
@@ -17,7 +17,7 @@ A simple user interface for browsing overviews of the New York Times Bestsellers
 
 * Build an intuitive user interface
 
-* Make the UI responsive
+* Make UI as responsive as possible
 
 * Avoid using any CSS frameworks
 
