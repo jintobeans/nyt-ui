@@ -1,5 +1,11 @@
 $font-header: 'Coustard', serif;
 $font-sub: 'Open Sans', sans-serif;
+$accent-color-bright: #FF6A5C;
+$accent-color-light: #CAEBF2;
+
+%center-element{
+  margin: 0 auto
+}
 
 %flexbox-column {
   display: flex;
@@ -13,65 +19,39 @@ $font-sub: 'Open Sans', sans-serif;
   flex-wrap: wrap
 }
 
+%button-solid-hover-border{
+  font-size: 0.8rem;
+  margin: 0.2rem 0;
+  padding: 0.5em 1em;
+  border-radius: 20rem;
+  &:hover{
+    background-color: inherit;
+    outline: none
+  };
+  &:visited,
+  &:focus{
+    outline:none
+  }
+}
+
 * {
   box-sizing: border-box;
   font-family: $font-sub;
   font-weight: lighter;
+
 }
 
-//reset styles
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-ul,
-li,
-p,
-blockquote {
-  margin: 0;
-  padding: 0;
-  margin: 0 auto;
+p{
+  @extend %center-element
 }
 
-input,
-textarea,
-button {
-  border: 0;
-  border-radius: 0;
-  outline: none;
-  appearance: none;
-
-  &:hover,
-  &:active,
-  &:focus {
-    outline: none;
-  }
+b{
+  font-weight: bold
 }
-a{
-  color: black;
-  text-decoration: none;
-  &:hover{
-    text-decoration: underline;
-    text-decoration-color: orange
-  }
-}
-//end reset styles
-
-// hr {
-//   width: -webkit-fill-available;
-//   display: block;
-//   height: 1px;
-//   border: 0;
-//   border-top: 0.5rem solid orange;
-//   margin: 1em 0;
-//   padding: 0;
-//   border-radius: 2rem;
-// }
 
 body{
-  padding: 1em
+  padding: 1em;
+  background: white
 }
 
 h1,
@@ -81,65 +61,102 @@ h5,
 h6{
   font-weight: bold;
   font-family: $font-header;
-  margin: 0 auto;
+  @extend %center-element;
 }
 
 h3 a{
   font-weight: bold;
   font-family: $font-header;
+  &:visited{
+    color: black
+  }
+  &:hover, &:focus{
+    color: $accent-color-bright
+  }
+}
+
+a{
+  color: black;
+  text-decoration: none;
+  &:hover{
+    color: $accent-color-bright
+  }
 }
 
 #main,
-#lists{
+#lists,{
   @extend %flexbox-column
-}
+};
 
+//----- LIST ITEM STYLING -----//
 .list-item-content,
 #filter-buttons,
-#dropdowns,
-article{
+#dropdowns{
   @extend %flexbox-row;
-}
+};
 
 .list-item-content{
-  justify-content: space-around
-}
+  justify-content: space-around;
+};
 
-//Dropdown styles
+/* List Item Responsive */
+@media screen and (max-width: 500px){
+  .list-item-content{
+    flex-direction: row
+  }
+  .book-item-content p i{
+    display: none
+  }
+};
+
+//----- DROPDOWN STYLING -----//
 /* The container to position the dropdown content */
 .dropdown {
   position: relative;
   display: inline-block;
-}
+};
 
-/*dropdown buttons and hover styles*/
+/* Dropdown buttons and hover styles*/
 #filter-buttons{
   justify-content: space-around;
   margin: 1em 0;
   button{
-    background-color: none;
+    background-color: inherit;
     color: black;
     padding: 16px;
     font-size: 1rem;
     border: none;
     &:active,
+    &:visited,
     &:focus,
     &:hover{
+      outline: none;
       &:after{
         content: '';
-        border-bottom: 5px solid orange;
+        border-bottom: 5px solid $accent-color-bright;
         position: absolute;
         left: 0;
         top: 90%;
         width: 100%;
-        border-radius: 20px
+        border-radius: 20px;
+        outline: none
       }
     }
+  }
+};
+
+/* Filter buttons responsive */
+@media screen and (max-width: 500px){
+  #filter-buttons button{
+    padding: 0.3em
   }
 }
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
+  max-height:20rem;
+  overflow-x:hidden;
+  overflow-y:auto;
   display: none;
   position: absolute;
   background-color:white;
@@ -153,53 +170,92 @@ article{
   display: block;
   font-size: 0.8rem;
     &:hover{ //upon hover over links
-      background-color: orange;
+      background-color: $accent-color-light;
       opacity: 20%;
     }
   }
-}
+};
 
-/* Show the dropdown menu on hover */
+/* Dropdown menu shows on hover */
 .dropdown:hover .dropdown-content {
   display: block;
-}
+};
 
-//Individual Book Items
+//----- INDIVIDUAL BOOK ITEMS STYLING -----//
 .book-item{
   @extend %flexbox-column;
   padding: 0.5em;
-  margin: 1em 1em;
-  width: inherit;
-  width: auto;
-  max-width: 20vw;
+  margin: 1em 0;
+  width: 100%;
+  height: auto;
+  max-width: 15vw;
   img{
     height: auto;
     width: 100%;
     max-width: 20vh;
   }
-}
-/*Book Item Buttons*/
-.button button{
-  font-size: 0.8rem;
-  margin: .4rem 0;
-  padding: 0.8em 1em;
-  background-color: orange;
-  border-radius: 20rem;
-  border: 2px solid orange;
-  &:hover{
-    background-color: white;
-  }
-}
+};
 
-/* Buy Links */
+/* Book Item Buttons */
+.book-item-buttons-container{
+  margin: 0.5em 0
+};
+
+.buttonbuy button{
+  @extend %button-solid-hover-border;
+  background-color: $accent-color-bright;
+  border: 2px solid $accent-color-bright;
+};
+
+.buttonbasic button{
+  @extend %button-solid-hover-border;
+  background-color: $accent-color-light;
+  border: 2px solid $accent-color-light;
+};
+
+/* Book Item Buy Links */
 #buy-links div{
   margin: 0.2em;
   a {
     font-size: 0.8em
   }
+};
+
+/* Book Item Responsive */
+@media screen and (max-width: 768px){
+  .book-item{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 0.1em;
+    margin: 0.5em 0.8em;
+    width: 100%;
+    height: auto;
+    max-width: 10vw;
+    img{
+      height: auto;
+      width: 100%;
+      max-width: 8vh;
+    }
+  }
+  .book-item-buttons-container{
+    margin: 0.1em 0
+  };
+  .buttonbasic,
+  .buttonbuy{
+    padding: 0em
+  }
+};
+
+@media screen and (max-width: 500px){
+  .book-item{
+    img, button {
+      display: none
+    }
+  }
 }
 
-/*Single List*/
+//----- SINGLE LIST PAGE STYLING -----//
 .single-list{
   margin: 1rem 0
-}
+};

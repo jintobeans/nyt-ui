@@ -1,6 +1,6 @@
 # New York Times Bestsellers
 
-## A simple user interface for browsing overviews of the New York Times Bestsellers lists
+## A simple user interface for browsing overviews of the New York Times Bestsellers
 
 For this project, I used React to render components, React-Redux for overall state management, Express for serving the app, and jsonp for accessing data from the NYT Books Overview API that was given.
 
@@ -18,10 +18,16 @@ For this project, I used React to render components, React-Redux for overall sta
 
 * Include tests for each component
 
-* Be as modular as possible
+* Write code that is as modular and readable as possible
 
 ## Bugs:
 
+* Moving API call to the backend does not work with jsonp
+
 ## Stretch Goals:
 
-* Integrate other API calls (outside of 'Overview') from the NYT Books API
+* Make JSONP API calls from the back end in order to protect security of API key
+
+* Integrate other API calls (outside of 'Overview') from the NYT Books API with additional reducers
+
+

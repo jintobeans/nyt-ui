@@ -24,11 +24,10 @@ const getOverview = overview => ({ type: GET_OVERVIEW, overview })
  * THUNK CREATORS
  */
 export const overviewResultsThunk = () => {
-  return dispatch => {
+  return dispatch =>
     jsonp(url, null, (err, data) => {
       err ? console.error(err.message) : dispatch(getOverview(data.results))
     })
-  }
 }
 
 /**

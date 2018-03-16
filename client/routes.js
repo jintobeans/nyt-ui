@@ -1,13 +1,10 @@
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
-import {Router, Route, Switch} from 'react-router-dom'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { Router, Route, Switch } from 'react-router-dom'
 import history from './history'
-import {Main, Body, SingleList} from './components'
-import {overviewResultsThunk} from './store'
+import { Main, Home, SingleList } from './components'
+import { overviewResultsThunk } from './store'
 
-/**
- * COMPONENT
- */
 class Routes extends Component {
   componentWillMount(){
     this.props.getOverview()
@@ -21,8 +18,8 @@ class Routes extends Component {
             <Route path="/overviewList/:listNameEncoded"
             component={SingleList} />
             <Route path="/overviewList"
-            component={Body} />
-            <Route path="/" component={Body} />
+            component={Home} />
+            <Route path="/" component={Home} />
           </Switch>
         </Main>
       </Router>
@@ -30,9 +27,6 @@ class Routes extends Component {
   }
 }
 
-/**
- * CONTAINER
- */
 const mapState = (state) => {
   return {
     overview: state.overview

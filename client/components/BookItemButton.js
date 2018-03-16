@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 
-export class Button extends Component {
+export class BookItemButton extends Component {
   handleClickDropdown = (e) => {
     e.preventDefault()
     let {links} = this.props
+    //this will allow user to click to show or hide buy links
     let parentButtonDiv = document.getElementById(this.props.id)
     if ( parentButtonDiv.childElementCount > 1 ){
       parentButtonDiv.removeChild(parentButtonDiv.childNodes[1])
@@ -23,9 +24,9 @@ export class Button extends Component {
   render() {
     let {filter, label, type, id, links} = this.props
     return (
-      <div className="button" id={id}>
+      <div className={`button${type}`} id={id}>
         <button
-        onClick={type === 'dropdown' ? this.handleClickDropdown : undefined}
+        onClick={type === 'buy' ? this.handleClickDropdown : undefined}
         label={label}
         type={type}>
           {this.props.label}
@@ -35,4 +36,4 @@ export class Button extends Component {
   }
 }
 
-export default Button
+export default BookItemButton

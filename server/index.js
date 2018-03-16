@@ -5,6 +5,7 @@ const bodyParser = require('body-parser')
 const compression = require('compression')
 const PORT = process.env.PORT || 8080
 const app = express()
+
 module.exports = app
 
 if (process.env.NODE_ENV !== 'production') require('../secrets')
@@ -21,7 +22,7 @@ const createApp = () => {
   // compression middleware
   app.use(compression())
 
-  //use API
+  //use API - this is commented out because backend JSONP call not working
   // app.use('/api', require('./api'))
 
   // static file-serving middleware

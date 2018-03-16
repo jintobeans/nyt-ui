@@ -42,7 +42,11 @@ export class SingleList extends Component {
         <div className="list-item-content">
           {list && list.books && list.books.length > 0 && list.books.map((book) => {
             return (
-              <BookItem key={book.rank} book={book} routedList={listName}/>
+              <BookItem
+                key={book.rank}
+                book={book}
+                routedList={listName}
+              />
             )
           })}
         </div>
