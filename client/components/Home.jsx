@@ -170,7 +170,7 @@ export class Home extends Component {
   }
 }
 
-const mapState = (state) => {
+const mapState = (state) => { //divide lists by group for render view
   return {
     allLists: state.overview.lists,
     fictionLists: state.overview.lists && state.overview.lists.length && state.overview.lists.filter((list) => {
