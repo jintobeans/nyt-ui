@@ -2,7 +2,7 @@
 
 A 3-4 day challenge to build a simple user interface for browsing overviews of the New York Times Bestsellers
 
-View the deployed app here: nyt-ui.herokuapp.com
+View the deployed app here: https://nyt-ui.herokuapp.com
 
 ## Technologies Used:
 
@@ -37,7 +37,7 @@ Install dependencies:
 ```
 npm install
 ```
-Create a secrets.js file in the project repository and save API key there:
+Create a *secrets.js* file in the project repository and save API key there:
 ```
 PROCESS.ENV.API_KEY = 'enter api key here'
 ```

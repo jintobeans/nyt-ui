@@ -43,8 +43,8 @@ describe('<Home /> Component', () => {
     )
   });
 
-  it('should render <div> called `#filter-buttons`', () => {
-    expect(home.find('#filter-buttons')).to.have.length(1)
+  it('should render <div> called `#filter-buttons-container`', () => {
+    expect(home.find('#filter-buttons-container')).to.have.length(1)
   });
 
   it('should render two items with `.filter-dropdown` classname for each list of lists', () => {
@@ -55,8 +55,8 @@ describe('<Home /> Component', () => {
     expect(home.find('button')).to.have.length(2)
   });
 
-  it('should render <div> called `#lists`', () => {
-    expect(home.find('#lists')).to.have.length(1)
+  it('should render <div> called `#view-lists`', () => {
+    expect(home.find('#view-lists')).to.have.length(1)
   });
 
   it('should map over each list with an <a> tag', () => {
