@@ -2,6 +2,8 @@
 
 A 3-4 day challenge to build a simple user interface for browsing overviews of the New York Times Bestsellers
 
+View the deployed app here: nyt-ui.herokuapp.com
+
 ## Technologies Used:
 
 * React
@@ -35,6 +37,10 @@ Install dependencies:
 ```
 npm install
 ```
+Create a secrets.js file in the project repository and save API key there:
+```
+PROCESS.ENV.API_KEY = 'enter api key here'
+```
 Run on local server:
 ```
 npm run start-dev
@@ -42,7 +48,7 @@ npm run start-dev
 
 ## Bugs:
 
-* Moving API call to the backend does not currently work with jsonp - ideal for protecting API key
+* Moving API call to the backend is not working right now with jsonp - ideal for protecting API key
 
 ## Stretch Goals:
 
