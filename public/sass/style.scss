@@ -88,7 +88,7 @@ h6{
 }
 
 #main,
-#lists,{
+#view-lists,{
   @extend %flexbox-column
 };
 
@@ -132,8 +132,7 @@ a{
   height: auto;
 }
 .list-item-content,
-#filter-buttons,
-#dropdowns{
+#filter-buttons-container{
   @extend %flexbox-row;
 };
 
@@ -158,13 +157,13 @@ a{
 
 //----- FILTER DROPDOWN STYLING -----//
 /* The container to position the dropdown content */
-.dropdown {
+.filter-dropdown {
   position: relative;
   display: inline-block;
 };
 
 /* Dropdown buttons and hover styles*/
-#filter-buttons{
+#filter-buttons-container{
   justify-content: space-around;
   margin: 1em 0;
   button{
@@ -195,13 +194,13 @@ a{
 
 /* Filter buttons responsive */
 @media screen and (max-width: 768px){
-  #filter-buttons button{
+  #filter-buttons-container button{
     padding: 0.5em
   }
 }
 
 @media screen and (max-width: 500px){
-  #filter-buttons{
+  #filter-buttons-container{
     margin: 0;
     button{
       margin: 0;
@@ -209,8 +208,8 @@ a{
   }
 }
 
-/* Filter Dropdown Content (Hidden by Default) */
-.dropdown-content {
+/* Filter Dropdown filter-buttons (Hidden by Default) */
+.filter-dropdown-content {
   @extend %hidden-dropdown-content;
   max-height:20rem;
   overflow-x:hidden;
@@ -219,7 +218,7 @@ a{
 };
 
 /* Dropdown menu shows on hover */
-.dropdown:hover .dropdown-content {
+.filter-dropdown:hover .filter-dropdown-content {
   display: block;
 };
 
@@ -253,7 +252,7 @@ a{
     background-color: $accent-color-bright;
     border: 2px solid $accent-color-bright;
     cursor: pointer;
-  }
+  };
 }
 
 .buttonbasic button{
@@ -264,7 +263,7 @@ a{
 
 
 /* Content of Buy Dropdown (Hidden by Default) */
-.buyDropdownContent {
+.buy-dropdown-content {
   @extend %hidden-dropdown-content;
 }
 

@@ -52,22 +52,22 @@ export class Home extends Component {
     let componentContext = this
 
     return (
-      <div id="content">
-        <div id="filter-buttons">
+      <div id='home-content'>
+        <div id='filter-buttons-container'>
           {listValues.length > 0 && listValues.map((list) => {
             return (
-              <div className="dropdown" id={`dropdown-${list}`}>
+              <div className='filter-dropdown' id={`filter-dropdown-${list}`}>
                 <button
-                  className="dropbtn"
+                  className='filter-dropbtn'
                   onClick={this.handleFilterButtonClick}
                   value={list}>
                   {list.slice(0, list.indexOf('List')).toUpperCase()}
                 </button>
-                <div className="dropdown-content">
+                <div className='filter-dropdown-content'>
                   {this.props[list] && this.props[list].map((listItem) => {
                     return (
                       <a
-                        href="/"
+                        href='/'
                         key={listItem.list_name}
                         id={listItem.list_name_encoded}
                         onClick={componentContext.handleDropdownSelection}>
@@ -80,10 +80,10 @@ export class Home extends Component {
             )
           })}
         </div>
-        <div id="lists">
+        <div id='view-lists'>
           {this.state.selectedLists && this.state.selectedLists.length > 0 && this.state.selectedLists.map((list) => {
             return (
-              <div className="list-item" key={list.list_id}>
+              <div className='list-item' key={list.list_id}>
                 <ListItem list={list} />
               </div>
             )
@@ -94,23 +94,23 @@ export class Home extends Component {
   }
 }
 
-const mapState = (state) => { //divide lists by group for render view
+const mapState = (state) => {
   return {
     allLists: state.overview.lists,
 
-    fictionLists: state.overview.lists && state.overview.lists.length && state.overview.lists.filter((list) => {
+    fictionLists: state.overview.lists && state.overview.lists.filter((list) => {
       return list.list_name.includes('Fiction')
     }),
 
-    nonfictionLists: state.overview.lists && state.overview.lists.length && state.overview.lists.filter((list) => {
+    nonfictionLists: state.overview.lists && state.overview.lists.filter((list) => {
       return list.list_name.includes('Nonfiction') || list.list_name.includes('Advice')
     }),
 
-    youthLists: state.overview.lists && state.overview.lists.length && state.overview.lists.filter((list) => {
+    youthLists: state.overview.lists && state.overview.lists.filter((list) => {
       return list.list_name.includes('Children') || list.list_name.includes('Young') || list.list_name.includes('Picture') || list.list_name.includes('Series')
     }),
 
-    monthlyLists: state.overview.lists && state.overview.lists.length && state.overview.lists.filter((list) => {
+    monthlyLists: state.overview.lists && state.overview.lists.filter((list) => {
       return list.list_name.includes('Business') || list.list_name.includes('Science') || list.list_name.includes('Sports') || list.list_name.includes('Audio')
     }),
   }

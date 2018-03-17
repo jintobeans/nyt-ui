@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 
 export class BookItemButton extends Component {
 
-  handleOpenLinks = (e) => {
-    e.preventDefault()
-    document.getElementById(`buy${this.props.id}`).classList.toggle("showBuyLinks");
+  handleOpenLinks = (clickEvent) => {
+    clickEvent.preventDefault()
+    document.getElementById(`buy${this.props.id}`).classList.toggle('showBuyLinks')
   }
 
   render() {
@@ -19,7 +19,7 @@ export class BookItemButton extends Component {
           {this.props.label}
         </button>
         {type === 'buy'
-          ? <div id={`buy${id}`} className="buyDropdownContent">
+          ? <div id={`buy${id}`} className='buy-dropdown-content'>
               {links.map((link) => {
                 return (
                   <a href={link.url}>{link.name}</a>

@@ -41,9 +41,9 @@ export class SingleList extends Component {
          {list && list.display_name}
         </h3>
         <h4>
-          <Link to="/">Go back to homepage</Link>
+          <Link to='/'>Go back to homepage</Link>
         </h4>
-        <div className="list-item-content">
+        <div className='list-item-content'>
           {list && list.books && list.books.length > 0 && list.books.map((book) => {
             return (
               <BookItem

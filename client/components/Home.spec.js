@@ -47,8 +47,8 @@ describe('<Home /> Component', () => {
     expect(home.find('#filter-buttons')).to.have.length(1)
   });
 
-  it('should render two items with `.dropdown` classname for each list of lists', () => {
-    expect(home.find('.dropdown')).to.have.length(2)
+  it('should render two items with `.filter-dropdown` classname for each list of lists', () => {
+    expect(home.find('.filter-dropdown')).to.have.length(2)
   });
 
   it('should render two buttons - one for each list of lists', () => {
