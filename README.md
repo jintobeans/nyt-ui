@@ -17,6 +17,8 @@ View the deployed app here: https://nyt-ui.herokuapp.com
 
 ## Objectives of the challenge:
 
+Given: One API endpoint belonging to NYT Books API that returns overview information
+
 * Build an intuitive user interface
 
 * Make UI as responsive as possible
