@@ -19,13 +19,9 @@ View the deployed app here: https://nyt-ui.herokuapp.com
 
 Given: One API endpoint belonging to NYT Books API that returns overview information
 
-* Build an intuitive user interface
-
-* Make UI as responsive as possible
+* Build an intuitive and responsive user interface
 
 * Avoid using any CSS frameworks
-
-* Use SASS to write CSS better
 
 * Be supported by all modern browsers
 
