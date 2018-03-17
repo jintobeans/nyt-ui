@@ -1,5 +1,4 @@
 const router = require('express').Router()
-// const axios = require('axios')
 const jsonp = require('jsonp');
 
 module.exports = router
