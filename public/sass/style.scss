@@ -140,7 +140,7 @@ a{
   justify-content: space-around;
 };
 
-/* List Item Responsive */
+/* Responsive List Item Styles */
 @media screen and (max-width: 500px){
   .list-item-content{
     flex-direction: column;
@@ -156,13 +156,13 @@ a{
 };
 
 //----- FILTER DROPDOWN STYLING -----//
-/* The container to position the dropdown content */
+/* The container to position the filter dropdown content */
 .filter-dropdown {
   position: relative;
   display: inline-block;
 };
 
-/* Dropdown buttons and hover styles*/
+/* Filter dropdown buttons and hover styles*/
 #filter-buttons-container{
   justify-content: space-around;
   margin: 1em 0;
@@ -192,7 +192,7 @@ a{
   }
 };
 
-/* Filter buttons responsive */
+/* Responsive Filter Button Styles */
 @media screen and (max-width: 768px){
   #filter-buttons-container button{
     padding: 0.5em
@@ -208,7 +208,7 @@ a{
   }
 }
 
-/* Filter Dropdown filter-buttons (Hidden by Default) */
+/* Filter Dropdown Content (Hidden by Default) */
 .filter-dropdown-content {
   @extend %hidden-dropdown-content;
   max-height:20rem;
@@ -243,7 +243,7 @@ a{
 };
 
 // ----- BOOK ITEM BUTTON STYLING AND DROPDOWN ----- /
-/* Dropdown Container */
+/* Buy Links Dropdown Container */
 .buttonbuy {
   position: relative;
   display: inline-block;
