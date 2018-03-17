@@ -26,7 +26,11 @@ const getOverview = overview => ({ type: GET_OVERVIEW, overview })
 export const overviewResultsThunk = () => {
   return dispatch =>
     jsonp(url, null, (err, data) => {
-      err ? console.error(err.message) : dispatch(getOverview(data.results))
+      if (err){
+        console.error(err.message)
+      } else {
+        dispatch(getOverview(data.results))
+      }
     })
 }
 
