@@ -43,6 +43,7 @@ Run on local server:
 ```
 npm run start-dev
 ```
+Visit the app at localhost:8080 in your browser!
 
 ## Bugs:
 
