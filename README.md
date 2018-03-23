@@ -47,9 +47,9 @@ Visit the app at localhost:8080 in your browser!
 
 ## Bugs:
 
-* JSONP call is not being done ideally: 
-** Moving API call to the backend is not working right now with jsonp - ideal for protecting API key
-** Should also take advantage of options object inside of jsonp
+JSONP call is not being done ideally: 
+* Moving API call to the backend is not working right now with jsonp - ideal for protecting API key
+* Should also take advantage of options object inside of jsonp
 
 ## Stretch Goals:
 
